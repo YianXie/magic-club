@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python,django
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,django
 
+# Do not upload the video because it exceeds the maximum size (100 MB)
+home/static/home/videos/promotion-video.mp4
+
 ### Django ###
 *.log
 *.pot
