@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+{% block sources %}
+    <link rel="stylesheet" href="{% static "home/css/index.css" %}">
+    <script src="{% static "home/js/index.js" %}"></script>
+    <style>
+        
+    </style>
+{% endblock %}
+
+{% block content %}
+    <section>
+        <h1>SAS Magic Club</h1>
+        <h2>Dive into the World of <span>Magic</span></h2>
+        <div class="mission-statement">
+            <div class="quote">
+                <img src="{% static "home/icons/quotation-mark.svg" %}" alt="quotation-mark-icon" width="40" height="40" style="transform: rotateY(180deg);">
+                <blockquote>
+                    Magic club aims to spark the child-like curiosity of its members and spread the <u>art of magic</u> through the medium of <u>entertaining and exciting performances</u>.
+                </blockquote> 
+                <img src="{% static "home/icons/quotation-mark.svg" %}" alt="quotation-mark-icon" width="40" height="40">
+            </div>
+            <p class="citation">— Mission Statement</p>
+        </div>
+    </section>
+    <section>
+        <div class="video-container">
+            <video class="promotion-video" autoplay loop muted>
+                <source src="{% static "home/videos/promotion-video.mp4" %}" type="video/mp4">
+                Your browser does not support the HTML video tag.
+            </video>
+            <img src="{% static "home/icons/volume-off.svg" %}" alt="volume" width="25" height="25" class="volume-controller" draggable="False">
+            <p class="subtitle">Presented by our legendary founder <b>Legend Yang</b></p>
+        </div>
+    </section>
+    <section>
+        <h1>Events Participated</h1>
+        <div class="cards">
+            <div style="--idx: -3;" class="card" title="Front">
+                <div class="front">
+                    <h1>Front</h1>
+                </div>
+                <div class="back">
+                    <p>Back</p>
+                </div>
+            </div>
+            <div style="--idx: -2;" class="card" title="Front">
+                <div class="front">
+                    <h1>Front</h1>
+                </div>
+                <div class="back">
+                    <p>Back</p>
+                </div>
+            </div>
+            <div style="--idx: -1;" class="card" title="Front">
+                <div class="front">
+                    <h1>Front</h1>
+                </div>
+                <div class="back">
+                    <p>Back</p>
+                </div>
+            </div>
+            <div style="--idx: 0;" class="card" title="Front">
+                <div class="front">
+                    <h1>Front</h1>
+                </div>
+                <div class="back">
+                    <p>Back</p>
+                </div>
+            </div>
+            <div style="--idx: 1;" class="card" title="Primary School Performance">
+                <div class="front">
+                    <h1>Primary School</h1>
+                </div>
+                <div class="back">
+                    <p>Back</p>
+                </div>
+            </div>
+            <div style="--idx: 2;" class="card" title="Open Stage 2024">
+                <div class="front">
+                    <h1>Open Stage 2024</h1>
+                </div>
+                <div class="back">
+                    <p>Back</p>
+                </div>
+            </div>
+            <div style="--idx: 3;" class="card" title="Theatre Festival 2025">
+                <div class="front">
+                    <h1>Theatre Festival 2025</h1>
+                </div>
+                <div class="back">
+                    <p>Back</p>
+                </div>
+            </div>
+        </div>
+        <p class="card-hint">Hover your mouse to see more</p>
+    </section>
+{% endblock %}

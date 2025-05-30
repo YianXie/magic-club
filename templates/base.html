@@ -1,0 +1,38 @@
+{% load static %}
+
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="icon" type="image/icon-x" href="{% static 'images/favicon.ico' %}">
+    <script type="text/javascript" src="{% static "js/base.js" %}"></script>
+    <title>SAS Magic Club - {% block title %}{% endblock %}</title>
+    {% block sources %}{% endblock %}
+</head>
+<body>
+    <header>
+        <nav>
+            <div onclick="window.location.href = '/';">
+                <img src="{% static "images/logo.jpg" %}" alt="logo.jpg" width="50" height="50">
+                <a title="Home">SAS Magic Club</a>
+            </div>
+            <a href="{% url "about" %}">About</a>
+            <a href="{% url "events" %}">Events</a>
+            <a href="{% url "contact" %}">Contact</a>
+            <button onclick="alert('Function WIP')">Join Us</button>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 | SAS Magic Club</p>
+    </footer>
+</body>
+
+</html>

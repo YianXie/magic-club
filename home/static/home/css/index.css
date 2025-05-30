@@ -1,0 +1,255 @@
+@font-face {
+    font-family: Tinos;
+    src: url("../../home/fonts/Tinos/Tinos-Regular.ttf");
+    font-weight: regular;
+}
+
+@font-face {
+    font-family: Tinos;
+    src: url("../../home/fonts/Tinos/Tinos-Bold.ttf");
+    font-weight: bold;
+}
+
+::-moz-selection {
+    /* Code for Firefox */
+    color: white;
+    background: lightblue;
+}
+
+::selection {
+    color: white;
+    background: lightblue;
+}
+
+main section {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 85vh;
+    overflow: hidden;
+}
+
+main section:nth-child(even) {
+    background-color: lightgrey;
+    color: black;
+}
+
+main section:nth-child(odd) {
+    background-color: black;
+    color: white;
+}
+
+main section:has(video) {
+    justify-content: center;
+    align-items: center;
+}
+
+main section>h1 {
+    text-align: center;
+    font-size: 72px;
+    text-shadow: 1px 1px 5px white;
+    margin-top: 100px;
+}
+
+main section>h2 {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 64px;
+    background: -webkit-linear-gradient(#fff, #999);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+main div.video-container {
+    position: relative;
+}
+
+main video {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    pointer-events: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px black;
+}
+
+main img.volume-controller {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 10px;
+    user-select: none;
+    cursor: pointer;
+    z-index: 1;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+main p.video-context {
+    /* float: right; */
+    align-self: end;
+}
+
+main .mission-statement {
+    padding: 0 50px;
+    margin-top: 150px;
+}
+
+main blockquote {
+    position: relative;
+    text-align: center;
+    font-size: 26px;
+    font-family: Tinos, serif;
+    line-height: 1.5;
+}
+
+main .mission-statement>.quote {
+    display: flex;
+}
+
+main .mission-statement>.quote>img {
+    position: relative;
+    pointer-events: none;
+    user-select: none;
+}
+
+main .mission-statement>.quote>img:first-child {
+    align-self: start;
+    top: -40px;
+}
+
+main .mission-statement>.quote>img:last-child {
+    align-self: end;
+    bottom: -40px;
+}
+
+main .mission-statement>.citation {
+    position: relative;
+    font-weight: bold;
+    font-size: 28px;
+    font-family: Tinos;
+    text-align: right;
+    margin-top: 50px;
+    margin-right: 50px;
+}
+
+
+/* Card flip effect */
+.cards {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    perspective: 1000px;
+    overflow: visible;
+}
+
+.card {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform-origin: 50% 100%;
+    transition: 0.3s;
+    user-select: none;
+    cursor: pointer;
+
+    &:not(.active):hover {
+        translate: 0 -50px;
+    }
+
+    &:not(.active):hover::after {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.card .front,
+.card .back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: lightskyblue;
+    border: 2px solid white;
+    border-radius: 15px;
+    filter: hue-rotate(calc(var(--idx) * 50deg));
+    backface-visibility: hidden;
+    transition: 0.3s;
+    -webkit-backface-visibility: hidden;
+
+    &:hover {
+        box-shadow: 0 0 20px white;
+    }
+}
+
+.card::after {
+    content: attr(title);
+    position: absolute;
+    left: 50%;
+    top: -50px;
+    width: max-content;
+    height: auto;
+    background-color: rgba(39, 39, 39, 0.8);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    font-size: 1.5rem;
+    padding: 5px;
+    border-radius: 5px;
+    transform: translateX(-50%);
+    transition: 0.3s;
+    visibility: hidden;
+    overflow: hidden;
+    opacity: 0;
+    z-index: 1;
+}
+
+.card .front {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.card .front>h1 {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    line-break: auto;
+}
+
+.card .back {
+    background-color: black;
+    transform: rotateY(180deg)
+}
+
+.card .back>p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.cards:hover>.card,
+.cards:has(.card.active)>.card {
+    transform: rotate(calc(var(--idx) * 7.5deg)) translate(calc(var(--idx) * 100px), -50px);
+}
+
+.card.active {
+    top: 50%;
+    transform: rotateY(180deg) translateY(-50%) !important;
+    z-index: 1;
+}
+
+.cards:has(.card.active)>.card:not(.active) {
+    filter: brightness(0.5) blur(3px);
+}
+
+.card-hint {
+    position: relative;
+    text-align: center;
+}
