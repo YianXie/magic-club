@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-rbcegyo!t=!!)vx_9o)qhn9zsz%%w#t1brq-42n-%d*9-ia55r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "magic-club-rxg7.onrender.com"]
 
 
 # Application definition
