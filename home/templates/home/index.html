@@ -15,86 +15,81 @@
         <h1>SAS Magic Club</h1>
         <h2>Dive into the World of <span>Magic</span></h2>
         <div class="mission-statement">
-            <div class="quote">
-                <img src="{% static "home/icons/quotation-mark.svg" %}" alt="quotation-mark-icon" width="40" height="40" style="transform: rotateY(180deg);">
-                <blockquote>
-                    Magic club aims to spark the child-like curiosity of its members and spread the <u>art of magic</u> through the medium of <u>entertaining and exciting performances</u>.
-                </blockquote> 
-                <img src="{% static "home/icons/quotation-mark.svg" %}" alt="quotation-mark-icon" width="40" height="40">
-            </div>
-            <p class="citation">— Mission Statement</p>
+            <blockquote></blockquote> 
+            <p class="citation"></p>
         </div>
     </section>
     <section>
         <div class="video-container">
-            <video class="promotion-video" autoplay loop muted>
-                <source src="{% static "home/videos/promotion-video.mp4" %}" type="video/mp4">
-                Your browser does not support the HTML video tag.
-            </video>
-            <img src="{% static "home/icons/volume-off.svg" %}" alt="volume" width="25" height="25" class="volume-controller" draggable="False">
+            <div class="video">
+                <video class="promotion-video" autoplay loop muted>
+                    <source src="{% static "home/videos/promotion-video.mp4" %}" type="video/mp4">
+                    Your browser does not support the HTML video tag.
+                </video>
+                <img src="{% static "home/images/volume-off.svg" %}" alt="volume" class="volume-controller" draggable="False">
+            </div>
             <p class="subtitle">Presented by our legendary founder <b>Legend Yang</b></p>
         </div>
     </section>
     <section>
         <h1>Events Participated</h1>
+        <p class="card-hint">Hover your mouse on the card to see more</p>
         <div class="cards">
-            <div style="--idx: -3;" class="card" title="Front">
+            <div style="--idx: -2;" class="card" title="More in the future ...">
                 <div class="front">
-                    <h1>Front</h1>
+                    <h1>More in the future ...</h1>
                 </div>
                 <div class="back">
-                    <p>Back</p>
+                    <img>
+                    <p>
+                        
+                    </p>
                 </div>
             </div>
-            <div style="--idx: -2;" class="card" title="Front">
+            <div style="--idx: -1;" class="card" title="International Fair">
                 <div class="front">
-                    <h1>Front</h1>
+                    <h1>International Fair</h1>
                 </div>
                 <div class="back">
-                    <p>Back</p>
+                    <img src="" alt="international fair">
+                    <p>
+
+                    </p>
                 </div>
             </div>
-            <div style="--idx: -1;" class="card" title="Front">
+            <div style="--idx: 0;" class="card" title="Primary School Performance">
                 <div class="front">
-                    <h1>Front</h1>
+                    <h1>Primary School Performance</h1>
                 </div>
                 <div class="back">
-                    <p>Back</p>
+                    <img src="{% static "home/images/primary-school-performance.png" %}" alt="primary school performance">
+                    <p>
+                        We participated in ...
+                    </p>
                 </div>
             </div>
-            <div style="--idx: 0;" class="card" title="Front">
-                <div class="front">
-                    <h1>Front</h1>
-                </div>
-                <div class="back">
-                    <p>Back</p>
-                </div>
-            </div>
-            <div style="--idx: 1;" class="card" title="Primary School Performance">
-                <div class="front">
-                    <h1>Primary School</h1>
-                </div>
-                <div class="back">
-                    <p>Back</p>
-                </div>
-            </div>
-            <div style="--idx: 2;" class="card" title="Open Stage 2024">
+            <div style="--idx: 1;" class="card" title="Open Stage 2024">
                 <div class="front">
                     <h1>Open Stage 2024</h1>
                 </div>
                 <div class="back">
-                    <p>Back</p>
+                    <img src="{% static "home/images/open-stage-2024.png" %}" alt="open stage 2024">
+                    <p>
+                        We participated in ...
+                    </p>
                 </div>
             </div>
-            <div style="--idx: 3;" class="card" title="Theatre Festival 2025">
+            <div style="--idx: 2;" class="card" title="Theatre Festival 2025">
                 <div class="front">
                     <h1>Theatre Festival 2025</h1>
                 </div>
                 <div class="back">
-                    <p>Back</p>
+                    <img src="{% static "home/images/theatre-festival-2025.png" %}" alt="theatre festival 2025">
+                    <p>
+                        We participated in the school's 2025 Theatre Festival, and performed a legedary magic show. Our founder — Legend Yang, was cut in half in front of the audiences with two sharp knifes. Yet, he's body miraculously revived at last.
+                    </p>
                 </div>
             </div>
         </div>
-        <p class="card-hint">Hover your mouse to see more</p>
     </section>
 {% endblock %}

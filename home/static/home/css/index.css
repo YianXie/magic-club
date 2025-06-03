@@ -1,3 +1,4 @@
+/* Fonts */
 @font-face {
     font-family: Tinos;
     src: url("../../home/fonts/Tinos/Tinos-Regular.ttf");
@@ -10,6 +11,8 @@
     font-weight: bold;
 }
 
+
+/* Global properties */
 ::-moz-selection {
     /* Code for Firefox */
     color: white;
@@ -21,6 +24,34 @@
     background: lightblue;
 }
 
+
+/* Body fade in animation */
+/* main section:first-child>h1 {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards ease-out 1s;
+}
+
+main section:first-child>h2 {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards ease-out 2s;
+}
+
+main .mission-statement {
+    animation: fadeIn 1s forwards ease-out 3s;
+
+    &>blockquote::before,
+    &>blockquote::after {
+        animation: fadeIn 1s forwards ease-out 3s;
+    }
+}
+
+main section:not(section:first-child) {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards ease-out 4s;
+} */
+
+
+/* Styles */
 main section {
     display: flex;
     flex-direction: column;
@@ -65,6 +96,10 @@ main div.video-container {
     position: relative;
 }
 
+div.video-container>.video {
+    position: relative;
+}
+
 main video {
     position: relative;
     width: 100%;
@@ -79,6 +114,8 @@ main img.volume-controller {
     position: absolute;
     right: 0;
     bottom: 0;
+    width: 30px;
+    height: 30px;
     margin: 10px;
     user-select: none;
     cursor: pointer;
@@ -89,14 +126,13 @@ main img.volume-controller {
     }
 }
 
-main p.video-context {
-    /* float: right; */
-    align-self: end;
+main p.subtitle {
+    text-align: right;
 }
 
 main .mission-statement {
     padding: 0 50px;
-    margin-top: 150px;
+    margin-top: 10vh;
 }
 
 main blockquote {
@@ -105,26 +141,14 @@ main blockquote {
     font-size: 26px;
     font-family: Tinos, serif;
     line-height: 1.5;
-}
 
-main .mission-statement>.quote {
-    display: flex;
-}
-
-main .mission-statement>.quote>img {
-    position: relative;
-    pointer-events: none;
-    user-select: none;
-}
-
-main .mission-statement>.quote>img:first-child {
-    align-self: start;
-    top: -40px;
-}
-
-main .mission-statement>.quote>img:last-child {
-    align-self: end;
-    bottom: -40px;
+    &::before,
+    &::after {
+        content: '"';
+        font-size: 48px;
+        margin: 0 5px;
+        opacity: 0;
+    }
 }
 
 main .mission-statement>.citation {
@@ -150,8 +174,8 @@ main .mission-statement>.citation {
 
 .card {
     position: absolute;
-    width: 200px;
-    height: 300px;
+    width: 225px;
+    aspect-ratio: 2.5 / 3.5;
     transform-style: preserve-3d;
     transform-origin: 50% 100%;
     transition: 0.3s;
@@ -213,8 +237,9 @@ main .mission-statement>.citation {
 }
 
 .card .front {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
+    word-break: break-word;
 }
 
 .card .front>h1 {
@@ -226,17 +251,29 @@ main .mission-statement>.citation {
 
 .card .back {
     background-color: black;
-    transform: rotateY(180deg)
+    transform: rotateY(180deg);
+    filter: none;
+    padding: 5px;
+}
+
+.card .back img {
+    width: 100%;
+    height: 30%;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .card .back>p {
     font-size: 1rem;
-    line-height: 1.5;
+    margin-top: 10px;
+    line-height: 1.25;
+    text-align: center;
 }
 
 .cards:hover>.card,
 .cards:has(.card.active)>.card {
-    transform: rotate(calc(var(--idx) * 7.5deg)) translate(calc(var(--idx) * 100px), -50px);
+    transform: rotate(calc(var(--idx) * 10deg)) translate(calc(var(--idx) * 100px), -50px);
 }
 
 .card.active {
@@ -252,4 +289,16 @@ main .mission-statement>.citation {
 .card-hint {
     position: relative;
     text-align: center;
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
