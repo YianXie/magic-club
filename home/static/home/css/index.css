@@ -26,7 +26,7 @@
 
 
 /* Body fade in animation */
-/* main section:first-child>h1 {
+main section:first-child>h1 {
     opacity: 0;
     animation: fadeIn 1.5s forwards ease-out 1s;
 }
@@ -48,7 +48,7 @@ main .mission-statement {
 main section:not(section:first-child) {
     opacity: 0;
     animation: fadeIn 1.5s forwards ease-out 4s;
-} */
+}
 
 
 /* Styles */
@@ -114,8 +114,8 @@ main img.volume-controller {
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     margin: 10px;
     user-select: none;
     cursor: pointer;
@@ -273,7 +273,7 @@ main .mission-statement>.citation {
 
 .cards:hover>.card,
 .cards:has(.card.active)>.card {
-    transform: rotate(calc(var(--idx) * 10deg)) translate(calc(var(--idx) * 100px), -50px);
+    transform: rotate(calc(var(--idx) * 10deg)) translate(calc(var(--idx) * 125px), -50px);
 }
 
 .card.active {
