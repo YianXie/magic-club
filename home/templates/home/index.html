@@ -18,15 +18,13 @@
     </section>
     <section>
         <div class="video-container">
-            <div class="video">
-                <video class="promotion-video" autoplay loop muted>
-                    <source src="{% static "home/videos/promotion-video.mp4" %}" type="video/mp4">
-                    Your browser does not support the HTML video tag.
-                </video>
-                <img src="{% static "home/images/volume-off.svg" %}" alt="volume" class="volume-controller" draggable="False">
-            </div>
-            <p class="subtitle">Presented by our legendary founder <b>Legend Y.</b></p>
+            <video class="promotion-video" autoplay muted loop>
+                <source src="https://storage.googleapis.com/videoholders/video/Club%20Fair%20Video.MP4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <img src="{% static "home/images/volume-off.svg" %}" alt="volume" class="volume-controller" draggable="False" onclick="switchVideoMute(this)">
         </div>
+        <p class="video-subtitle">Presented by our founder <i>Legend Y.</i></p>
     </section>
     <section>
         <h1>Events Participated</h1>

@@ -1,6 +1,7 @@
 const missionStatement = "Magic club aims to spark the child-like curiosity of its members and spread the art of magic through the medium of entertaining and exciting performances.";
 const missionStatementCitation = "— Mission Statement";
 let cardActived;
+let videoMuted = true;
 
 function getAllParents(element) {
     const parents = [];
@@ -14,6 +15,12 @@ function getAllParents(element) {
     return parents;
 }
 
+function switchVideoMute(e) {
+    videoMuted ? e.src = "/static/home/images/volume-on.svg" : e.src = "/static/home/images/volume-off.svg";
+    document.querySelector(".promotion-video").muted = !videoMuted;
+    videoMuted = !videoMuted;
+}
+
 function sleep(ms) {
     return new Promise(resolve => {
         setTimeout(resolve, ms);
@@ -22,17 +29,21 @@ function sleep(ms) {
 
 document.addEventListener("DOMContentLoaded", function () {
     setTimeout(async () => {
+        // Re-enable scroll
+        document.body.style.overflow = 'auto';
+
+        // Letter effect
         const blockQuote = document.querySelector("blockquote");
         const blockQuoteCitation = document.querySelector(".citation");
         for (const letter of missionStatement) {
             blockQuote.textContent += letter;
-            await sleep(7.5); // wait for 0.01 second
+            await sleep(7.5); // wait for 0.0075 second
         }
         for (const letter of missionStatementCitation) {
             blockQuoteCitation.textContent += letter;
-            await sleep(7.5);
+            await sleep(7.5); // wait for 0.0075 second
         }
-    }, 3000);
+    }, 2500);
     document.querySelectorAll(".card").forEach(card => {
         card.addEventListener("click", function () {
             if (cardActived && cardActived !== card) {
@@ -44,16 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
         card.addEventListener("contextmenu", (e) => {
             e.preventDefault();
         });
-    });
-    document.querySelector(".volume-controller").addEventListener("click", function () {
-        const video = document.querySelector(".promotion-video");
-        if (video.muted) {
-            this.src = "../../static/home/images/volume-on.svg";
-            video.muted = false;
-        } else {
-            this.src = "../../static/home/images/volume-off.svg";
-            video.muted = true;
-        }
     });
 });
 

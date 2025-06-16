@@ -12,46 +12,37 @@
 }
 
 
-/* Global properties */
-::-moz-selection {
-    /* Code for Firefox */
-    color: white;
-    background: lightblue;
-}
-
-::selection {
-    color: white;
-    background: lightblue;
-}
-
-
 /* Body fade in animation */
 main section:first-child>h1 {
     opacity: 0;
-    animation: fadeIn 1.5s forwards ease-out 1s;
+    animation: fadeIn 1.5s forwards ease-out 0.5s;
 }
 
 main section:first-child>h2 {
     opacity: 0;
-    animation: fadeIn 1.5s forwards ease-out 2s;
+    animation: fadeIn 1.5s forwards ease-out 1.5s;
 }
 
 main .mission-statement {
-    animation: fadeIn 1s forwards ease-out 3s;
+    animation: fadeIn 1s forwards ease-out 2.5s;
 
     &>blockquote::before,
     &>blockquote::after {
-        animation: fadeIn 1s forwards ease-out 3s;
+        animation: fadeIn 1s forwards ease-out 2.5s;
     }
 }
 
 main section:not(section:first-child) {
     opacity: 0;
-    animation: fadeIn 1.5s forwards ease-out 4s;
+    animation: fadeIn 1.5s forwards ease-out 3.5s;
 }
 
 
 /* Styles */
+body {
+    overflow: hidden;
+}
+
 main section {
     display: flex;
     flex-direction: column;
@@ -92,22 +83,17 @@ main section>h2 {
     -webkit-text-fill-color: transparent;
 }
 
-main div.video-container {
+main .video-container {
     position: relative;
+    width: 90%;
+    height: 90%;
 }
 
-div.video-container>.video {
-    position: relative;
-}
-
-main video {
-    position: relative;
+main .video-container video {
     width: 100%;
-    height: auto;
-    max-height: 80vh;
+    height: 100%;
+    object-fit: cover;
     pointer-events: none;
-    border-radius: 5px;
-    box-shadow: 0 0 5px black;
 }
 
 main img.volume-controller {
@@ -119,15 +105,22 @@ main img.volume-controller {
     margin: 10px;
     user-select: none;
     cursor: pointer;
-    z-index: 1;
+    transition: 0.3s;
+    z-index: 10;
 
     &:hover {
         opacity: 0.8;
     }
+
+    &:active {
+        opacity: 0.6;
+    }
 }
 
-main p.subtitle {
+main .video-subtitle {
+    width: 90%;
     text-align: right;
+    margin-top: 5px;
 }
 
 main .mission-statement {
@@ -202,10 +195,10 @@ main .mission-statement>.citation {
     height: 100%;
     padding: 10px;
     text-align: center;
-    background-color: lightskyblue;
+    background-color: rgb(154, 216, 255);
     border: 2px solid white;
     border-radius: 15px;
-    filter: hue-rotate(calc(var(--idx) * 50deg));
+    filter: hue-rotate(calc(var(--idx) * 50deg)) saturate(100%);
     backface-visibility: hidden;
     transition: 0.3s;
     -webkit-backface-visibility: hidden;
