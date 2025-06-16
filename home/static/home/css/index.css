@@ -133,7 +133,7 @@ main blockquote {
     text-align: center;
     font-size: 26px;
     font-family: Tinos, serif;
-    line-height: 1.5;
+    line-height: 1.2;
 
     &::before,
     &::after {
@@ -185,6 +185,14 @@ main .mission-statement>.citation {
     }
 }
 
+/* the "more in future" card */
+.card:first-child .back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
 .card .front,
 .card .back {
     display: flex;
@@ -195,15 +203,19 @@ main .mission-statement>.citation {
     height: 100%;
     padding: 10px;
     text-align: center;
-    background-color: rgb(154, 216, 255);
+    background-color: lightskyblue;
     border: 2px solid white;
     border-radius: 15px;
-    filter: hue-rotate(calc(var(--idx) * 50deg)) saturate(100%);
+    filter: hue-rotate(calc(var(--idx) * 50deg)) grayscale(20%);
     backface-visibility: hidden;
     transition: 0.3s;
     -webkit-backface-visibility: hidden;
 
     &:hover {
+        box-shadow: 0 0 10px white;
+    }
+
+    &:active {
         box-shadow: 0 0 20px white;
     }
 }
