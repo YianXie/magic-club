@@ -1,0 +1,52 @@
+main {
+    height: 100%;
+    background-color: floralwhite;
+    color: black;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.event-filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-block: 25px 5px;
+}
+
+.event-filters>span {
+    font-size: 1.4rem;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:active {
+        opacity: 0.8;
+    }
+
+    &:not(.active) {
+        color: grey;
+    }
+}
+
+.event-filters>span.active {
+    color: rgb(53, 198, 255);
+    text-decoration: underline;
+}
+
+.event-filters+hr {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border: none;
+    border-top: 1.5px solid lightgrey;
+}

@@ -1,1 +1,18 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block title %}Events{% endblock %}
+{% block sources %}
+    <link rel="stylesheet" href="{% static "events/css/index.css" %}">
+    <script src="{% static "events/js/index.js" %}"></script>
+{% endblock %}
+
+{% block content %}
+    <h1>Events</h1>
+    <div class="event-filters">
+        <span class="active">All</span>
+        <span>Upcoming</span>
+        <span>Past</span>
+    </div>
+    <hr>
+{% endblock %}
