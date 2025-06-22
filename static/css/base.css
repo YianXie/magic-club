@@ -67,7 +67,7 @@ header>nav a {
 }
 
 header>nav button {
-    background: transparent;
+    background: rgba(53, 198, 255, 0.1);
     border: 1.5px solid rgb(53, 198, 255);
     border-radius: 7.5px;
     color: rgb(53, 198, 255);
@@ -84,7 +84,7 @@ header>nav button {
     }
 
     &:active {
-        opacity: 0.8;
+        opacity: 0.6;
     }
 }
 

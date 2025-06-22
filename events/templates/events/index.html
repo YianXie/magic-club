@@ -1,18 +1,38 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Events{% endblock %}
+{% block title %}
+  Events
+{% endblock %}
 {% block sources %}
-    <link rel="stylesheet" href="{% static "events/css/index.css" %}">
-    <script src="{% static "events/js/index.js" %}"></script>
+  <link rel="stylesheet" href="{% static 'events/css/index.css' %}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+  <script src="{% static 'events/js/index.js' %}"></script>
 {% endblock %}
 
 {% block content %}
-    <h1>Events</h1>
-    <div class="event-filters">
-        <span class="active">All</span>
-        <span>Upcoming</span>
-        <span>Past</span>
-    </div>
-    <hr>
+  <h1>Events</h1>
+  <div class="event-filters">
+    <span class="active">All</span>
+    <span>Upcoming</span>
+    <span>Past</span>
+  </div>
+  <hr />
+  <article>
+    {% for event in events %}
+      <div class="event-item {% if event.is_past %}past{% else %}upcoming{% endif %}">
+        <img src="/media/{{ event.picture }}" />
+        <div>
+          <h2>{{ event.title }}</h2>
+          <div class="event-details">
+            <span class="event-date">{{ event.date }}</span>
+            <span class="event-location">{{ event.location }}</span>
+          </div>
+          <p class="event-description">{{ event.description|truncatewords:30 }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </article>
 {% endblock %}
