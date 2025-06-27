@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env("SECRET_KEY")
 
 ENVIRONMENT = env("ENVIRONMENT", default="production")
-ENVIRONMENT = "production"
+# ENVIRONMENT = "production"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if ENVIRONMENT == "development":
