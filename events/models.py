@@ -1,11 +1,10 @@
 from django.db import models
-from django.conf import settings
 
 
 # Create your models here.
 class Event(models.Model):
     title = models.CharField(max_length=100)
-    date = models.DateTimeField()
+    date = models.DateField()
     picture = models.ImageField(
         upload_to="uploads/", default="uploads/default.webp", blank=True
     )

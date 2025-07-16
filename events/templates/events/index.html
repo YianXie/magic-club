@@ -4,6 +4,7 @@
 {% block title %}Events{% endblock %}
 {% block sources %}
   <link rel="stylesheet" href="{% static 'events/css/index.css' %}" />
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
@@ -13,6 +14,7 @@
 {% block content %}
   <h1>Events</h1>
 
+  {% comment %} The filter bar {% endcomment %}
   <div class="event-filters">
     <span class="active">All</span>
     <span>Upcoming</span>
@@ -20,19 +22,24 @@
   </div>
   <hr />
   
-  <article>
-    {% for event in events %}
-      <div class="event-item {% if event.is_past %}past{% else %}upcoming{% endif %}">
-        <img src="{{ event.picture.url }}" />
-        <div>
-          <h2>{{ event.title }}</h2>
-          <div class="event-details">
+  {% comment %} Map the event data {% endcomment %}
+  {% for event in events %}
+    <article class="event-item {% if event.is_past %}past{% else %}upcoming{% endif %}">
+      <img src="{{ event.picture.url }}" />
+      <div class="info-column">
+        <h2>{{ event.title }}</h2>
+        <div class="event-details">
+          <div>
+            <i class='bx  bx-calendar-alt'  ></i> 
             <span class="event-date">{{ event.date }}</span>
-            <span class="event-location">{{ event.location }}</span>
           </div>
-          <p class="event-description">{{ event.description|truncatewords:30 }}</p>
+          <div class="event-location">
+            <i class='bx bx-location'></i> 
+            <span>{{ event.location }}</span>
+          </div>
         </div>
+        <p class="event-description">{{ event.description|truncatewords:30 }}</p>
       </div>
-    {% endfor %}
-  </article>
+    </article>
+  {% endfor %}
 {% endblock %}

@@ -10,8 +10,6 @@ def events(request):
     # Annotate each event with a temporary attribute (not saved to DB)
     now = timezone.now().date()
     for event in events:
-        event.is_past = (
-            event.date.date() < now
-        )  # or just event.date if it's already a date
+        event.is_past = event.date < now
 
     return render(request, "events/index.html", {"events": events})
