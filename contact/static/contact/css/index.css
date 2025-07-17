@@ -1,0 +1,150 @@
+body {
+    background-color: rgb(222, 222, 222);
+}
+
+main h1 {
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+main>h1 {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+main>h1::after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 100px);
+    height: 1.5px;
+    left: 50%;
+    bottom: -5px;
+    border-radius: 25%;
+    transform: translate(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+main>div {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    margin-top: 25px;
+    padding: 20px;
+}
+
+main .contact-detail,
+main form {
+    background-color: rgb(211, 211, 211);
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 50%;
+}
+
+main .contact-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    line-break: loose;
+}
+
+main .contact-detail div:has(>i) {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+main .contact-detail h2 {
+    font-weight: 400;
+    font-size: 1.6rem;
+    margin-bottom: 3px;
+}
+
+main .contact-detail p {
+    letter-spacing: 1px;
+}
+
+main .contact-detail a {
+    color: blue;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+main form>h1 {
+    margin-bottom: 25px;
+}
+
+main form input,
+main form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1.5px solid rgba(0, 0, 0, 0.4);
+    margin-top: 3px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: 2px solid transparent;
+    transition: border 0.3s, outline 0.3s;
+
+    &:focus {
+        border: 1.5px solid rgba(0, 0, 255, 0.6);
+        outline: 2px solid rgba(161, 161, 255, 0.6);
+    }
+}
+
+main form textarea {
+    min-height: 50px;
+    max-height: 200px;
+    resize: vertical;
+}
+
+main form input.message-input {
+    resize: both;
+}
+
+main form button[type="submit"] {
+    border: none;
+    padding: 15px;
+    background-color: rgb(51, 51, 51);
+    color: white;
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &:active {
+        opacity: 0.6;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    main>div {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main .contact-detail,
+    main form {
+        width: 100%;
+    }
+}

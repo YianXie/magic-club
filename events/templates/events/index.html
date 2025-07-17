@@ -20,26 +20,27 @@
     <span>Upcoming</span>
     <span>Past</span>
   </div>
-  <hr />
   
   {% comment %} Map the event data {% endcomment %}
-  {% for event in events %}
-    <article class="event-item {% if event.is_past %}past{% else %}upcoming{% endif %}">
-      <img src="{{ event.picture.url }}" />
-      <div class="info-column">
-        <h2>{{ event.title }}</h2>
-        <div class="event-details">
-          <div>
-            <i class='bx  bx-calendar-alt'  ></i> 
-            <span class="event-date">{{ event.date }}</span>
+  <div>
+    {% for event in events %}
+      <article class="event-item {% if event.is_past %}past{% else %}upcoming{% endif %}">
+        <img src="{{ event.picture.url }}" />
+        <div class="info-column">
+          <h2>{{ event.title }}</h2>
+          <div class="event-details">
+            <div>
+              <i class='bx  bx-calendar-alt'  ></i> 
+              <span class="event-date">{{ event.date }}</span>
+            </div>
+            <div class="event-location">
+              <i class='bx bx-location'></i> 
+              <span>{{ event.location }}</span>
+            </div>
           </div>
-          <div class="event-location">
-            <i class='bx bx-location'></i> 
-            <span>{{ event.location }}</span>
-          </div>
+          <p class="event-description">{{ event.description|truncatewords:30 }}</p>
         </div>
-        <p class="event-description">{{ event.description|truncatewords:30 }}</p>
-      </div>
-    </article>
-  {% endfor %}
+      </article>
+    {% endfor %}
+  </div>
 {% endblock %}

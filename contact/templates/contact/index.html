@@ -1,3 +1,66 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Contact{% endblock %}
+{% block sources %}
+    <link rel="stylesheet" href="{% static "contact/css/index.css" %}">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+    <script src="{% static "contact/js/index.js" %}"></script>
+{% endblock %}
+
+{% block content %}
+    <h1>Contact Us</h1>
+    <div>
+        <div class="contact-detail">
+            <h1>Contact Details</h1>
+            <div>
+                <h2>Email</h2>
+                <div>
+                    <i class='bx bx-envelope-open'></i> 
+                    <a href="mailto:magicclubsas1@gmail.com">magicclubsas1@gmail.com</a>
+                </div>
+            </div>
+            <div>
+                <h2>Social Medias</h2>
+                <div>
+                    <i class='bxl bx-instagram'></i> 
+                    <span><b>Instagram: </b><a href="https://www.instagram.com/sas.magicclub/" target="_blank">https://www.instagram.com/sas.magicclub/</a></span>
+                </div>
+            </div>
+            <div>
+                <h2>Meet Us</h2>
+                <div>
+                    <div>
+                        <i class='bx bx-location'></i> 
+                        <p><b>Location: </b>H103</p>
+                    </div>
+                    <div>
+                        <i class='bx bx-clock-5'></i> 
+                        <p><b>Time: </b>Wednesday and Thursday flex time</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form onsubmit="handleSubmit()">
+            <h1>Online Inquiry</h1>
+            <label for="name">
+                <span>Name</span>
+                <input id="name" name="name" type="text" placeholder="e.g. Will Smith*" autofocus required>
+            </label>
+            <label for="email">
+                <span>Email</span>
+                <input id="email" name="email" type="email" placeholder="e.g. example@gmail.com*" required>
+            </label>
+            <label for="subject">
+                <span>Subject</span>
+                <input id="subject" name="subject" type="text" placeholder="Your subject here">
+            </label>
+            <label for="message">
+                <span>Message</span>
+                <textarea id="message" name="message" placeholder="Your messages here"></textarea>
+            </label>
+            <button type="submit">Contact Us</button>
+        </form>
+    </div>
+{% endblock %}
