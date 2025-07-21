@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Event Detail{% endblock %}
+{% block sources %}
+    <link rel="stylesheet" href="{% static 'events/css/event_detail.css' %}">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <script src="{% static 'events/js/event_detail.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <h1>Event Detail</h1>
+    <div class="event-container">
+        <img src="{{ event.picture.url }}" alt="event picture" draggable="False" onclick="zoomIn()">
+        <div>
+            <h2>{{ event.title }}</h2>
+            <div class="details">
+                <div>
+                    <i class='bx bx-calendar-detail'></i> 
+                    <span>{{ event.date }}</span>
+                </div>
+                <div>
+                    <i class='bx bx-location'></i> 
+                    <span>{{ event.location }}</span>
+                </div>
+            </div>
+            <p>{{ event.description }}</p>
+        </div>
+    </div>
+    
+    {% if event.is_past %}
+        <span class="status past">This event has already concluded!</span>
+    {% else %}
+        <span class="status future">This event will happen soon!</span>
+    {% endif %}
+
+    <div class="zoomed-bg">
+        <img src="{{ event.picture.url }}" alt="zoom-in picture" draggable="False" class="zoomed-img">
+    </div>
+{% endblock %}

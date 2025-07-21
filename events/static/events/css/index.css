@@ -59,6 +59,13 @@ h1 {
     text-decoration: underline;
 }
 
+.no-events {
+    display: none;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 25px;
+}
+
 /* Event items */
 .event-item {
     display: flex;
@@ -122,6 +129,7 @@ h1 {
     text-align: left;
     height: 100%;
     padding-block: 10px;
+    overflow: auto;
 }
 
 .event-item .event-details {

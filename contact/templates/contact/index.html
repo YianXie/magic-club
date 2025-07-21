@@ -42,25 +42,17 @@
                 </div>
             </div>
         </div>
-        <form onsubmit="handleSubmit()">
+        <form method="post">
+            {% csrf_token %}
             <h1>Online Inquiry</h1>
-            <label for="name">
-                <span>Name</span>
-                <input id="name" name="name" type="text" placeholder="e.g. Will Smith*" autofocus required>
-            </label>
-            <label for="email">
-                <span>Email</span>
-                <input id="email" name="email" type="email" placeholder="e.g. example@gmail.com*" required>
-            </label>
-            <label for="subject">
-                <span>Subject</span>
-                <input id="subject" name="subject" type="text" placeholder="Your subject here">
-            </label>
-            <label for="message">
-                <span>Message</span>
-                <textarea id="message" name="message" placeholder="Your messages here"></textarea>
-            </label>
-            <button type="submit">Contact Us</button>
+            {{ form }}
+            <button type="submit">Submit</button>
         </form>
     </div>
+
+    {% if success_message %}
+        <script>
+            alert("{{ success_message }}");
+        </script>
+    {% endif %}
 {% endblock %}

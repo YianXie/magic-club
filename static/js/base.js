@@ -5,12 +5,20 @@ function updatePadding() {
 
 window.addEventListener("resize", updatePadding);
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector("main").addEventListener("scroll", function (e) {
-        const main = document.querySelector("main");
+    const main = document.querySelector("main");
+
+    main.addEventListener("scroll", function () {
+        // After the user has scrolled to the bottom
         const footerShowCondition = main.scrollTop + main.clientHeight >= main.scrollHeight - 1;
 
         document.querySelector("nav").classList.toggle("highlight", main.scrollTop >= 200);
         document.querySelector("footer").classList.toggle("show", footerShowCondition);
     });
+
+    // If there is nothing to scroll
+    if (main.scrollHeight === main.offsetHeight) {
+        document.querySelector("footer").classList.add("show");
+    }
+
     updatePadding();
 });
