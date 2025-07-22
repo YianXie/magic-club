@@ -16,6 +16,8 @@ jobs:
       ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
       CLOUDINARY_URL: ${{ secrets.CLOUDINARY_URL }}
+      EMAIL_HOST_NAME: ${{ secrets.EMAIL_HOST_NAME }}
+      EMAIL_HOST_PASSWORD: ${{ secrets.EMAIL_HOST_PASSWORD }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
