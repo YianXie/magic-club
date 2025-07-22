@@ -35,9 +35,9 @@ if ENVIRONMENT == "development":
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "magic-club.onrender.com"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "magic-club.onrender.com", "www.sas-magicclub.org"]
 
-CSRF_TRUSTED_ORIGINS = ["https://magic-club.onrender.com"]
+CSRF_TRUSTED_ORIGINS = ["https://magic-club.onrender.com", "https://sas-magicclub.org/"]
 
 
 # Email stuff
