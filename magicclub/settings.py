@@ -35,7 +35,7 @@ if ENVIRONMENT == "development":
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "https://magic-club.onrender.com/"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "magic-club.onrender.com"]
 
 CSRF_TRUSTED_ORIGINS = ["https://magic-club.onrender.com"]
 
@@ -48,7 +48,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = env("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
-DEFAULT_FORM_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 # Application definition
