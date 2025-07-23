@@ -3,6 +3,17 @@ function updatePadding() {
     document.querySelector("main").style.paddingTop = padding + "px";
 }
 
+function showBurger() {
+    event.stopPropagation();
+    document.querySelector(".mobile-burger").classList.add("show");
+    document.addEventListener("click", function handleClick(e) {
+        if (!e.target.contains(document.querySelector(".mobile-burger"))) {
+            document.querySelector(".mobile-burger").classList.remove("show");
+            document.removeEventListener("click", handleClick);
+        }
+    });
+}
+
 window.addEventListener("resize", updatePadding);
 document.addEventListener("DOMContentLoaded", () => {
     const main = document.querySelector("main");

@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     const totalEvents = document.querySelectorAll(".event-item").length;
+    if (totalEvents <= 0) {
+        document.querySelector(".no-events").style.display = "block";
+    }
 
     document.querySelector(".event-filters").querySelectorAll("span").forEach(e => {
         e.addEventListener("click", function () {
@@ -16,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll(".event-item").forEach(el => {
                 el.style.display = "flex";
                 if (mode === "All") return;
-
                 if (!el.classList.contains(mode.toLowerCase())) {
                     el.style.display = "none";
                     filteredEvents++;

@@ -68,6 +68,10 @@ header>nav a {
     font-size: 24px;
 }
 
+header>nav i::before {
+    color: white;
+}
+
 header>nav button {
     background: rgba(53, 198, 255, 0.1);
     border: 1.5px solid rgb(53, 198, 255);
@@ -90,16 +94,16 @@ header>nav button {
     }
 }
 
-header>nav>a:hover {
+header>nav>a:not(.logo):hover {
     opacity: 0.8;
     text-decoration: underline;
 }
 
-header>nav>a:active {
+header>nav>a:not(.logo):active {
     opacity: 0.6;
 }
 
-header>nav>div {
+header>nav>a.logo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,16 +112,64 @@ header>nav>div {
     cursor: pointer;
 }
 
-header>nav>div img {
+header>nav img {
     border-radius: 50%;
     border: 1px solid white;
     user-select: none;
     pointer-events: none;
 }
 
-header>nav>div a {
+header>nav>a.logo>span {
     font-size: 36px;
     font-weight: bold;
+}
+
+header>nav aside.mobile-burger {
+    position: fixed;
+    right: 0;
+    top: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(5px);
+    transform-origin: top right;
+    transform: scale(0);
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+header>nav aside.mobile-burger.show {
+    visibility: visible;
+    transform: scale(1);
+}
+
+header>nav aside.mobile-burger ul {
+    list-style: none;
+}
+
+header>nav aside.mobile-burger ul>li {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+header>nav aside.mobile-burger ul>li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+header>nav aside.mobile-burger ul>li>a {
+    display: block;
+    font-size: 1.8rem;
+    color: black;
+    padding: 10px 15px;
+    width: 100%;
 }
 
 main {
@@ -140,7 +192,6 @@ footer {
     color: white;
     visibility: hidden;
     opacity: 0;
-    pointer-events: none;
     transition: 0.3s;
 }
 
@@ -148,4 +199,21 @@ footer.show {
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
+}
+
+
+@media only screen and (min-width: 750px) {
+    .show-mobile {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .hide-mobile {
+        display: none !important;
+    }
+
+    header>nav {
+        justify-content: space-between;
+    }
 }
