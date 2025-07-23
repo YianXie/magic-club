@@ -50,9 +50,18 @@
         </form>
     </div>
 
-    {% if success_message %}
-        <script>
-            alert("{{ success_message }}");
-        </script>
+    {% if messages %}
+        {% for message in messages %}
+            <script>
+                Toastify({
+                    text: "{{ message|escapejs }}",
+                    duration: 5000,
+                    gravity: "top", 
+                    position: "right",
+                    backgroundColor: "{% if message.tags == 'error' %}#f44336{% elif message.tags == 'success' %}#4caf50{% elif message.tags == 'info' %}#2196f3{% else %}#333{% endif %}",
+                    close: true
+                }).showToast();
+            </script>
+        {% endfor %}
     {% endif %}
 {% endblock %}
