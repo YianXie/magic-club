@@ -35,7 +35,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV=/Users/ianxie/Desktop/Coding/magicclub
+VIRTUAL_ENV=/Users/ianxie/Desktop/Coding/magic-club
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
@@ -52,9 +52,9 @@ fi
 
 if [ -z "${VIRTUAL_ENV_DISABLE_PROMPT:-}" ] ; then
     _OLD_VIRTUAL_PS1="${PS1:-}"
-    PS1='(magicclub) '"${PS1:-}"
+    PS1='(magic-club) '"${PS1:-}"
     export PS1
-    VIRTUAL_ENV_PROMPT='(magicclub) '
+    VIRTUAL_ENV_PROMPT='(magic-club) '
     export VIRTUAL_ENV_PROMPT
 fi
 

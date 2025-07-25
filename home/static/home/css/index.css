@@ -1,17 +1,3 @@
-/* Fonts */
-@font-face {
-    font-family: Tinos;
-    src: url("../../home/fonts/Tinos/Tinos-Regular.ttf");
-    font-weight: regular;
-}
-
-@font-face {
-    font-family: Tinos;
-    src: url("../../home/fonts/Tinos/Tinos-Bold.ttf");
-    font-weight: bold;
-}
-
-
 /* Body fade in animation */
 main section:first-child>h1 {
     opacity: 0;
@@ -148,7 +134,7 @@ main .mission-statement>.citation {
     position: relative;
     font-weight: bold;
     font-size: 28px;
-    font-family: Tinos;
+    font-family: Tinos, serif;
     text-align: right;
     margin-top: 50px;
     margin-right: 50px;

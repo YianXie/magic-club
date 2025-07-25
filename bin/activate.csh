@@ -8,7 +8,7 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV /Users/ianxie/Desktop/Coding/magicclub
+setenv VIRTUAL_ENV /Users/ianxie/Desktop/Coding/magic-club
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/"bin":$PATH"
@@ -17,8 +17,8 @@ setenv PATH "$VIRTUAL_ENV/"bin":$PATH"
 set _OLD_VIRTUAL_PROMPT="$prompt"
 
 if (! "$?VIRTUAL_ENV_DISABLE_PROMPT") then
-    set prompt = '(magicclub) '"$prompt"
-    setenv VIRTUAL_ENV_PROMPT '(magicclub) '
+    set prompt = '(magic-club) '"$prompt"
+    setenv VIRTUAL_ENV_PROMPT '(magic-club) '
 endif
 
 alias pydoc python -m pydoc
