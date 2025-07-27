@@ -33,7 +33,7 @@ main section {
     display: flex;
     flex-direction: column;
     position: relative;
-    height: 85vh;
+    padding-block: 50px;
     overflow: hidden;
 }
 
@@ -52,11 +52,15 @@ main section:has(video) {
     align-items: center;
 }
 
+main section:has(.cards) {
+    height: 650px;
+}
+
 main section>h1 {
     text-align: center;
     font-size: 72px;
     text-shadow: 1px 1px 5px white;
-    margin-top: 100px;
+    /* margin-top: 100px; */
 }
 
 main section>h2 {
@@ -110,8 +114,8 @@ main .video-subtitle {
 }
 
 main .mission-statement {
-    padding: 0 50px;
-    margin-top: 10vh;
+    padding-inline: 50px;
+    margin-top: 100px;
 }
 
 main blockquote {
@@ -282,6 +286,14 @@ main .mission-statement>.citation {
     text-align: center;
 }
 
+.show-mobile {
+    display: none;
+}
+
+.hide-mobile {
+    display: block;
+}
+
 
 /* Animations */
 @keyframes fadeIn {
@@ -291,5 +303,61 @@ main .mission-statement>.citation {
 
     to {
         opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .show-mobile {
+        display: block;
+    }
+
+    .hide-mobile {
+        display: none;
+    }
+
+    main section {
+        padding-block: 25px;
+    }
+
+    main section>h1 {
+        font-size: 60px;
+    }
+
+    main section>h2 {
+        font-size: 36px;
+        padding-inline: 20px;
+    }
+
+    main .mission-statement {
+        padding-inline: 20px;
+        margin-top: 50px;
+    }
+
+    main .mission-statement>.citation {
+        font-size: 24px;
+        margin-right: 25px;
+        margin-top: 25px;
+    }
+
+    main blockquote {
+        font-size: 16px;
+        line-height: 1.2;
+    }
+
+    main blockquote::before,
+    main blockquote::after {
+        font-size: 16px;
+    }
+
+    main .video-subtitle {
+        margin-top: 0;
+    }
+
+    main img.volume-controller {
+        display: none;
+    }
+
+    .cards {
+        margin-top: 50px;
     }
 }

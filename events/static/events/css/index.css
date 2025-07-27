@@ -83,7 +83,6 @@ h1 {
     margin-block: 20px;
     cursor: pointer;
     transition: 0.3s;
-    overflow: auto;
 }
 
 .event-item.upcoming::before {
@@ -128,24 +127,29 @@ h1 {
 .event-item>.info-column {
     text-align: left;
     height: 100%;
+    width: 100%;
     padding-block: 10px;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.event-item>.info-column>h2 {
+    line-height: 1.2;
 }
 
 .event-item .event-details {
     position: relative;
-    display: flex;
+    display: inline-flex;
     justify-content: start;
     align-items: center;
     font-style: italic;
     gap: 15px;
-    width: 100%;
 }
 
 .event-item .event-details::after {
     content: "";
     position: absolute;
-    width: calc(100% + 10px);
+    width: calc(100% + 20px);
     height: 1px;
     left: 0;
     bottom: 0;
@@ -161,7 +165,40 @@ h1 {
 
 .event-item .event-description {
     font-size: 1rem;
-    margin-top: 15px;
+    margin-top: 5px;
+    line-break: normal;
     line-height: 1.5;
     color: #333;
+}
+
+
+@media only screen and (max-width: 600px) {
+    div.events {
+        padding-inline: 20px;
+    }
+
+    .event-filters {
+        gap: 50px;
+    }
+
+    .event-filters::after {
+        width: calc(100% + 50px);
+    }
+
+    .event-item {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        height: auto;
+        padding-bottom: 10px;
+    }
+
+    .event-item>img {
+        width: 100%;
+        max-width: none;
+    }
+
+    .event-item>.info-column {
+        padding: 5px;
+    }
 }

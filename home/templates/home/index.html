@@ -25,13 +25,14 @@
                 <source src="https://storage.googleapis.com/videoholders/video/Club%20Fair%20Video.MP4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <img src="{% static "home/images/volume-off.svg" %}" alt="volume" class="volume-controller" draggable="False" onclick="switchVideoMute(this)">
+            <img src="{% static "home/images/volume-off.svg" %}" alt="volume" class="volume-controller hide-mobile" draggable="False" onclick="switchVideoMute(this)">
         </div>
         <p class="video-subtitle">Presented by our founder <i>Legend Y.</i></p>
     </section>
     <section>
         <h1>Events Participated</h1>
-        <p class="card-hint">Hover your mouse on the card to see more</p>
+        <p class="card-hint hide-mobile">Hover your mouse on the card to see more</p>
+        <p class="card-hint show-mobile">Rotate your phone to see more</p>
         <div class="cards">
             <div style="--idx: -2;" class="card" title="More in the future ...">
                 <div class="front">

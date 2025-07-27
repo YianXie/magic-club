@@ -54,8 +54,12 @@ header>nav a {
     font-size: 24px;
 }
 
-header>nav i::before {
+header>nav>i {
     color: white;
+}
+
+header>nav>i::before {
+    color: currentColor;
 }
 
 header>nav button {
@@ -115,7 +119,6 @@ header>nav aside.mobile-burger {
     right: 0;
     top: 100%;
     background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
     backdrop-filter: blur(5px);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     -webkit-backdrop-filter: blur(5px);
@@ -151,11 +154,19 @@ header>nav aside.mobile-burger ul>li:not(:last-child)::after {
 }
 
 header>nav aside.mobile-burger ul>li>a {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7.5px 15px;
+}
+
+header>nav aside.mobile-burger i {
+    color: black;
+}
+
+header>nav aside.mobile-burger span {
     font-size: 1.8rem;
     color: black;
-    padding: 10px 15px;
-    width: 100%;
 }
 
 main {

@@ -3,22 +3,22 @@ body {
 }
 
 main h1 {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
     font-weight: normal;
     text-transform: uppercase;
 }
 
 main>h1 {
-    display: inline-block;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
     font-size: 3rem;
     letter-spacing: 3px;
     text-align: center;
     margin-top: 20px;
 }
 
-main>h1::after {
+main h1::after {
     content: "";
     position: absolute;
     width: calc(100% + 100px);
