@@ -1,6 +1,9 @@
 {
     "cSpell.words": [
         "collectstatic",
-        "magicclub"
+        "createdb",
+        "dropdb",
+        "magicclub",
+        "PGPASSWORD"
     ]
 }
