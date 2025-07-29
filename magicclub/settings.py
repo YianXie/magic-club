@@ -27,7 +27,6 @@ Env.read_env(BASE_DIR / ".env")
 SECRET_KEY = env("SECRET_KEY")
 
 ENVIRONMENT = env("ENVIRONMENT", default="production")
-# ENVIRONMENT = "production"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if ENVIRONMENT == "development":
@@ -35,9 +34,14 @@ if ENVIRONMENT == "development":
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "magic-club.onrender.com", "www.sas-magicclub.org"]
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "magic-club.onrender.com",
+    "www.sas-magicclub.org",
+]
 
-CSRF_TRUSTED_ORIGINS = ["https://magic-club.onrender.com", "https://sas-magicclub.org/"]
+CSRF_TRUSTED_ORIGINS = ["https://magic-club.onrender.com", "https://sas-magicclub.org"]
 
 
 # Email stuff
@@ -115,6 +119,7 @@ if ENVIRONMENT == "development":
     }
 else:
     import dj_database_url
+
     DATABASES = {"default": dj_database_url.parse(env("DATABASE_URL"))}
 
 
@@ -157,9 +162,8 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
-MEDIA_URL = "media/"
-
 if ENVIRONMENT == "development":
+    MEDIA_URL = "media/"
     MEDIA_ROOT = BASE_DIR / "media"
 else:
     STORAGES = {
