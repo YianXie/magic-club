@@ -12,3 +12,8 @@ createdb -U $DATABASE_USER $DATABASE_NAME
 
 # Restore (overwrite) the local database
 pg_restore -U $DATABASE_USER -d $DATABASE_NAME cloud_backup.dump --no-owner --no-acl
+
+# Clean up the backup file
+rm cloud_backup.dump
+echo "Temporary backup file removed."
+echo "Local database is now in sync with the cloud."

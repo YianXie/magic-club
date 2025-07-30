@@ -23,6 +23,6 @@ class Event(models.Model):
                 # Some storage backend doesn't support `exists`
                 return self.picture.url
             
-            return f"https://res.cloudinary.com/{settings.CLOUDINARY_USERNAME}/image/upload/uploads/{self.picture.name}"
+            return f"https://res.cloudinary.com/{settings.CLOUDINARY_USERNAME}/image/upload/{self.picture.name}"
         
         return "/static/images/default-image.jpg"
