@@ -26,9 +26,7 @@
     <h2 class="no-events">No events...</h2>
     {% for event in events %}
       <article class="event-item {% if event.is_past %}past{% else %}upcoming{% endif %}" onclick="window.location.href = '/events/{{event.id}}';">
-        {% if ENVIRONMENT == 'development' %}
-          <img src="{{ event.picture.picture_url }}">
-        {% endif %}
+        <img src="{{ event.picture_url }}">
         <div class="info-column">
           <h2>{{ event.title }}</h2>
           <div class="event-details">

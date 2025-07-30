@@ -11,7 +11,7 @@
 {% block content %}
     <h1>Event Detail</h1>
     <div class="event-container">
-        <img src="{{ event.picture.picture_url }}" alt="event picture" draggable="False" onclick="zoomIn()">
+        <img src="{{ event.picture_url }}" alt="event picture" draggable="False" onclick="zoomIn()">
         <div>
             <h2>{{ event.title }}</h2>
             <div class="details">
@@ -35,6 +35,6 @@
     {% endif %}
 
     <div class="zoomed-bg">
-        <img src="{{ event.picture.picture_url }}" alt="zoom-in picture" draggable="False" class="zoomed-img">
+        <img src="{{ event.picture_url }}" alt="zoom-in picture" draggable="False" class="zoomed-img">
     </div>
 {% endblock %}

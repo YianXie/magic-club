@@ -83,6 +83,7 @@ h1 {
     margin-block: 20px;
     cursor: pointer;
     transition: 0.3s;
+    overflow: hidden;
 }
 
 .event-item.upcoming::before {
