@@ -8,6 +8,7 @@ main h1 {
     left: 50%;
     transform: translateX(-50%);
     font-weight: normal;
+    width: max-content;
     text-transform: uppercase;
 }
 
@@ -106,6 +107,18 @@ main form textarea {
     min-height: 50px;
     max-height: 200px;
     resize: vertical;
+}
+
+main form label {
+    position: relative;
+}
+
+main form div:has([required])>label::after {
+    content: "*";
+    position: absolute;
+    color: red;
+    font-size: 18px;
+    margin-left: 3px;
 }
 
 main form input.message-input {

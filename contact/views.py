@@ -14,8 +14,9 @@ def contact(request):
             email = form.cleaned_data["email"]
             message = form.cleaned_data["message"]
 
-            subject = f"Message from {name} ({email})"
-            body = f"Sender name: {name}\nSender email: {email}\nSender messages: {message}"
+            # Generate the subject and the body based on the user's input
+            subject = f"Message from {'an anonymous user' if name == '' else name}{'' if email == '' else f'({email})'}"
+            body = ('' if name == '' else (f'Sender name: {name}\r\n')) + ('' if email == '' else (f'Sender email: {email}\r\n')) + f"Sender messages: {message}"
 
             send_mail(
                 subject,
