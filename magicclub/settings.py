@@ -161,6 +161,7 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
+CLOUDINARY_USERNAME = env("CLOUDINARY_USERNAME")
 
 if ENVIRONMENT == "development":
     MEDIA_URL = "media/"

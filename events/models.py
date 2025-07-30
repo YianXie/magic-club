@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 
 # Create your models here.
@@ -11,3 +12,17 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
+
+    @property
+    def picture_url(self):
+        if self.picture and self.picture.name:
+            try:
+                if self.picture.storage.exists(self.picture.name):
+                    return self.picture.url
+            except NotImplementedError:
+                # Some storage backend doesn't support `exists`
+                return self.picture.url
+            
+            return f"https://res.cloudinary.com/{settings.CLOUDINARY_USERNAME}/image/upload/uploads/{self.picture.name}"
+        
+        return "/static/images/default-image.jpg"

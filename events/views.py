@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.conf import settings
 from .models import Event
 from django.utils import timezone
 
@@ -12,7 +13,7 @@ def events(request):
     for event in events:
         event.is_past = event.date < now
 
-    return render(request, "events/index.html", {"events": events})
+    return render(request, "events/index.html", {"events": events, "ENVIRONMENT": settings.ENVIRONMENT})
 
 
 def event_detail(request, id=0):

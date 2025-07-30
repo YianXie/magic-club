@@ -27,7 +27,7 @@ def contact(request):
             )
 
             # Add success message using Django's messages framework
-            messages.success(request, f"Thank you, {name}. Your message has been sent!")
+            messages.success(request, f"Thank you{'' if name == '' else f', {name}'}. Your message has been sent!")
 
             # Redirect to prevent form resubmission on page refresh
             return redirect("contact")
